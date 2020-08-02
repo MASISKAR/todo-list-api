@@ -55,7 +55,7 @@ Remove `.sample` extension from configuration files located in `/config/env/`
     $ npm start
 
 ## Making requests
-###``By default, the API_HOST is http://localhost:3001``
+### ``By default, the API_HOST is http://localhost:3001``
 
 #### Create a new task
 request url `API_HOST/task`
