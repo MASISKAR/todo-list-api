@@ -1,0 +1,20 @@
+{
+  "title": "create task",
+  "type": "object",
+  "properties": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "tasks": {
+          "type": "array"
+        }
+      },
+      "required": [
+        "tasks"
+      ]
+    }
+  },
+  "required": [
+    "body"
+  ]
+}

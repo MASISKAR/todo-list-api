@@ -1,0 +1,36 @@
+{
+  "name": "todo-list-api",
+  "version": "0.0.1",
+  "description": "Todo List API",
+  "author": "Masis Karapetyan (Sirius MK)",
+  "main": "server.js",
+  "private": true,
+  "license": "ISC",
+  "scripts": {
+    "start": "export NODE_ENV=dev|| set NODE_ENV=dev&& node server.js",
+    "prod": "export NODE_ENV=prod|| set NODE_ENV=prod&& node server.js"
+  },
+  "dependencies": {
+    "ajv": "^6.12.3",
+    "bluebird": "^3.7.2",
+    "body-parser": "1.19.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "debug": "^4.1.1",
+    "dotenv": "^8.2.0",
+    "errorhandler": "^1.5.1",
+    "express": "^4.17.1",
+    "formidable": "^1.2.2",
+    "helmet": "^3.23.3",
+    "http-errors": "^1.8.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.26",
+    "mongoose-beautiful-unique-validation": "^7.1.1",
+    "mongoose-paginate": "^5.0.3",
+    "morgan": "^1.10.0",
+    "path": "^0.12.7",
+    "read-chunk": "^3.2.0",
+    "uuid": "3.3.2",
+    "bcryptjs": "^2.4.3"
+  }
+}

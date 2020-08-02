@@ -1,0 +1,25 @@
+{
+  "title": "user sign in",
+  "type": "object",
+  "properties": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "format": "email",
+          "minLength": 1,
+          "maxLength": 254
+        },
+        "password": {
+          "type": "string",
+          "minLength": 6
+        }
+      },
+      "required": [
+        "email",
+        "password"
+      ]
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "title": "update user fields",
+  "type": "object",
+  "properties": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "surname": {
+          "type": "string",
+          "minLength": 1
+        },
+        "avatar": {
+          "type": "string",
+          "minLength": 1
+        },
+        "password": {
+          "type": "string",
+          "minLength": 6
+        }
+      }
+    }
+  },
+  "required": [
+    "body"
+  ]
+}
