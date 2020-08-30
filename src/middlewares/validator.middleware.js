@@ -22,16 +22,19 @@ forEach(file => {
  * @param  {Object} schema_errors - array of json-schema errors, describing each validation failure
  * @return {Object} formatted api response
  */
-const error_response = (schema_errors) => {
-	const errors = schema_errors.map(error => {
-		return {
-			name: 'ValidationError',
-			message: error.dataPath + ' ' + error.message
-		}
-	});
-	return {
-		errors: errors
+const error_response = ([error]) => {
+	
+	let enumStr = '';
+	if(error.keyword === 'enum'){
+		enumStr = ' ' + error.params.allowedValues.map(val => `"${val}"`).join(`, `);
 	}
+	return {
+		error : {
+			name: 'ValidationError',
+			message: `${error.dataPath} ${error.message}${enumStr}`,
+			status: 422
+		}
+	};
 };
 
 /**

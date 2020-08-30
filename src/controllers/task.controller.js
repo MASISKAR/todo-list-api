@@ -41,13 +41,11 @@ class TaskController {
             });
             if (!task) throw errorConfig.taskNotFound;
             
-            const {title, description, date} = req.body;
-            title && (
-                    task.title = title);
-            description && (
-                    task.description = description);
-            date && (
-                    task.date = date);
+            const {title, description, date, status} = req.body;
+            title && ( task.title = title);
+            description && ( task.description = description);
+            date && ( task.date = date);
+            status && ( task.status = status);
             
             await task.save();
             res.json(task.toObject());
@@ -96,8 +94,14 @@ class TaskController {
                 // owner: userId
             };
     
+            const {status} = query;
+            if(status && /^active$|^done$/ig.test(status)){
+                dbQuery.status = status;
+            }
+            
             if(query.search){
-                dbQuery.$or = [{ title: new RegExp(query.search, 'ig') }, { description: new RegExp(query.search, 'ig') }];
+                const searchReg = new RegExp(query.search, 'ig');
+                dbQuery.$or = [{ title: searchReg }, { description: searchReg }];
             }
     
             if (query.create_lte || query.create_gte) {
@@ -141,7 +145,8 @@ class TaskController {
             if (!tasks) throw errorConfig.taskNotFound;
     
             res.json(tasks);
-        } catch (err) {
+        }
+        catch (err) {
             next(err)
         }
     }

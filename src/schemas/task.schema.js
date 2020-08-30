@@ -17,6 +17,11 @@ const TaskSchema = new Schema(
     description: {
       type: String
     },
+    status: {
+      type: String,
+      default: 'active',
+      enum: ['active', 'done']
+    },
     date: {
       type: Date,
         format : 'date-time'

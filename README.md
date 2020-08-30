@@ -78,6 +78,8 @@ request method `GET`
 ##### The following filters and sorting are allowed
 `{`
 
+   status: `OneOf['active', 'done']`,
+
    search: `{searchString}`,
     
    create_lte: `{dateString}`,
@@ -97,7 +99,7 @@ request method `GET`
 request url `API_HOST/task/:taskId`
 request method `GET`
 
-#### Update the task
+#### Update a task
 request url `API_HOST/task/:taskId`
 request method `PUT`
 request body 
@@ -106,6 +108,14 @@ title: `{String}`,
 description: `{String}`,
 date: `{String}`
 `}`         
+    
+#### Mark a task as done/active
+request url `API_HOST/task/:taskId`
+request method `PUT`
+request body 
+`{`
+status: `OneOf['active', 'done']`,
+`}`    
     
 #### Delete the task
 request url `API_HOST/task/:taskId`
