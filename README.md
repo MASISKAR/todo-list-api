@@ -123,7 +123,7 @@ request method `DELETE`
 
 #### Delete batch tasks
 request url `API_HOST/task`
-request method `DELETE`
+request method `PATCH`
 request body 
 `{`
 tasks: `{Array[String{task id}]}`,
