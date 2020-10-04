@@ -22,7 +22,7 @@ taskRouter.get('/', /*auth,*/ taskController.getBatch);
 taskRouter.put('/:id',/* auth,*/ validator('task-update'), taskController.update);
 
 // delete batch tasks
-taskRouter.delete('/', /*auth,*/ validator('task-delete-batch'), taskController.deleteBatch);
+taskRouter.patch('/', /*auth,*/ validator('task-delete-batch'), taskController.deleteBatch);
 
 // delete single task
 taskRouter.delete('/:id', /*auth,*/ taskController.delete);
