@@ -1,3 +1,8 @@
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3001;
+}
+
 module.exports = {
-  'api_port': +process.env.SERVER_API_PORT,
+  'api_port': +port,
 };
